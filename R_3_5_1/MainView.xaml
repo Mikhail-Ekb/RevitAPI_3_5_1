@@ -1,0 +1,35 @@
+﻿<Window x:Class="R_3_5_1.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:R_3_5_1"
+             mc:Ignorable="d" 
+             MinHeight="280" MinWidth="300"
+             Title="Наименование окна" Height="180" Width="280">
+    <StackPanel>
+        <Label Content="Рассчитать количество труб в проекте"
+               Margin="5 5 5 0"/>
+        <Button Content="Рассчитать"
+                Command="{Binding SelectCommand_1}"
+                Margin="5 2 5 5"
+                Height="30"/>
+        <Label Content="Рассчитать объем всех стен в проекте"
+               Margin="5 5 5 0"/>
+        <Button Content="Рассчитать"
+                Command="{Binding SelectCommand_2}"
+                Margin="5 2 5 7"
+                Height="30"/>
+        <Separator/>
+        <Label Content="Замена типоразмера стен"
+               Margin="5 7 5 0"/>
+        <ComboBox ItemsSource="{Binding WallTypes}"
+                  SelectedValue="{Binding SelectedWallType}"
+                  DisplayMemberPath="Name"
+                  Margin="5"/>
+        <Button Content="Заменить"
+                Command="{Binding SaveCommand}"
+                Margin="5 2 5 5"
+                Height="30"/>
+    </StackPanel>
+</Window>
